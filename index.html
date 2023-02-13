@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+   <!-- materialize css -->
+   <link rel="stylesheet" href="styles/style.css">
+   <link rel="stylesheet" href="styles/materialize.css">
+
+   <!-- fontAwesome -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+   <title>MoneyMoon</title>
+</head>
+
+<body>
+
+   <header id="main-header" class="main-header">
+      <nav class="nav-header">
+         <div id="nav-wrapper" class="nav-wrapper">
+            <a href="#" class="brand-logo">MoneyMoon</a>
+
+
+
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+               <li id="logoutbtn"> <a id="logOutHref" class="modal-trigger" href="#modal1">Login</a></li>
+            </ul>
+         </div>
+      </nav>
+   </header>
+
+   <div id="main-code" class="main-code">
+
+      <!-- Modal Structure -->
+      <div id="modal1" class="modal row ">
+         <div class="modal-footer">
+            <a href="#!" class="modal-close">
+               <i class="fa-solid fa-xmark"></i>
+            </a>
+         </div>
+         <div class="login-register-form">
+            <div class="col s12 m12 l6 modal-content login">
+               <form>
+                  <div class="title-modal">Login</div>
+                  <div class="content-modal-login">
+                     <div class="input-field ">
+                        <label for="nameLog">Name</label>
+                        <input id="nameLog" name="nameLog" type="text" class="validate">
+                     </div>
+                     <div class="input-field ">
+                        <label for="mailLog">E-mail</label>
+                        <input id="mailLog" name="mailLog" type="text" class="validate">
+                     </div>
+                     <div class="input-field">
+                        <label for="passLog">Password</label>
+                        <input id="passLog" name="passLog" type="password" class="validate">
+                     </div>
+                     <div class="input-field">
+                        <div id="logBtn" class="custom-btn center-align">Login</div>
+                     </div>
+                  </div>
+               </form>
+            </div>
+
+            <div class="col s12 m12 l6 modal-content register">
+               <form>
+                  <div class="title-modal">Register</div>
+                  <div class="content-modal-register">
+                     <div class="input-field">
+                        <label for="name_register">Complete Name</label>
+                        <input id="name_register" name="name_register" type="text" class="validate">
+                     </div>
+                     <div class="input-field">
+                        <label for="email_reg">E-mail</label>
+                        <input id="email_reg" name="email_reg" type="text" class="validate">
+                     </div>
+                     <div class="input-field">
+                        <label for="password_reg">Password</label>
+                        <input id="password_reg" name="password_reg" type="password" class="validate">
+                     </div>
+                     <div class="input-field">
+                        <div id="regBtn" class="custom-btn center">Register</div>
+                     </div>
+                  </div>
+               </form>
+            </div>
+         </div>
+      </div>
+
+
+      <section class="s-main row ">
+         <div class="initial-info col s12">
+            <div class="s-main-description col s12 m12 l7">
+               <h1 class="t-desc">Savings, Transfers and Exchanges <br> in the same place...</h1>
+               <p class="p-desc"> More than a <span>bank account</span>.</p>
+            </div>
+            <div class="s-main-img hide-on-med-and-down center col s12 m12 l5">
+               <lord-icon stroke="70%" src="https://cdn.lordicon.com/yeallgsa.json" trigger="hover"
+                  style="width:300px;height:300px" colors="primary:#f5f5f5,secondary:#E8AC31">
+               </lord-icon>
+            </div>
+         </div>
+
+
+         <div class="advantages row">
+            <div class="info-community col s12">
+               <div class="center col s6 m4 l4">
+                  <lord-icon src="https://cdn.lordicon.com/huwchbks.json" trigger="hover"
+                     style="width:120px;height:120px" colors="primary:#E8AC31,secondary:#f5f5f5">
+                  </lord-icon>
+                  <p class="desc">Always secure.</p>
+               </div>
+               <div class="center col s6 m4 l4">
+                  <lord-icon src="https://cdn.lordicon.com/zpxybbhl.json" trigger="hover"
+                     style="width:120px;height:120px" colors="primary:#E8AC31,secondary:#f5f5f5">
+                  </lord-icon>
+                  <p class="desc">Big Community and 24/7 Support.</p>
+               </div>
+               <div class="center col s12 m4 l4">
+                  <lord-icon src="https://cdn.lordicon.com/gqzfzudq.json" trigger="hover"
+                     colors="primary:#f5f5f5,secondary:#E8AC31" state="hover-2" style="width:120px;height:120px">
+                  </lord-icon>
+                  <p class="desc">Use around the globe.</p>
+               </div>
+            </div>
+         </div>
+      </section>
+
+
+      <section class="s-prices row " id="s-prices">
+         <div class="col s12">
+
+            <div class="col s12 m6 l3">
+               <div class="card ">
+                  <div class="card-content center">
+                     <span class="card-title">Basic</span>
+                     <p class="card-desc">Sample Text Description</p>
+                     <ul>
+                        <li>
+                           <i class="fa-solid fa-check"></i> Sample Text Here
+                        </li>
+                        <li>
+                           <i class="fa-solid fa-check"></i>
+                           Sample text Here
+                        </li>
+                        <li>
+                           <i class="fa-solid fa-xmark"></i>
+                           Sample text Here
+                        </li>
+                        <li>
+                           <i class="fa-solid fa-xmark"></i>
+                           Sample text Here
+                        </li>
+                        <li>
+                           <i class="fa-solid fa-xmark"></i>
+                           Sample text Here
+                        </li>
+                        <li>
+                           <i class="fa-solid fa-xmark"></i>
+                           Sample text Here
+                        </li>
+                     </ul>
+                     <div class="row center">
+                        <button href="#" class="custom-btn">More</button>
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+            <div class="col s12 m6 l3">
+               <div class="card">
+                  <div class="card-content center">
+                     <span class="card-title">Standard</span>
+                     <p class="card-desc">Sample Text Description</p>
+                     <ul>
+                        <li>
+                           <i class="fa-solid fa-check"></i> Sample Text Here
+                        </li>
+                        <li>
+                           <i class="fa-solid fa-check"></i>
+                           Sample text Here
+                        </li>
+                        <li>
+                           <i class="fa-solid fa-check"></i>
+                           Sample text Here
+                        </li>
+                        <li>
+                           <i class="fa-solid fa-xmark"></i>
+                           Sample text Here
+                        </li>
+                        <li>
+                           <i class="fa-solid fa-xmark"></i>
+                           Sample text Here
+                        </li>
+                        <li>
+                           <i class="fa-solid fa-xmark"></i>
+                           Sample text Here
+                        </li>
+                     </ul>
+
+                     <div class="row center">
+                        <button href="#" class="custom-btn">More</button>
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+            <div class="col s12 m6 l3">
+               <div class="card">
+                  <div class="card-content center">
+                     <span class="card-title">Advanced</span>
+                     <p class="card-desc">Sample Text Description</p>
+                     <ul>
+                        <li>
+                           <i class="fa-solid fa-check"></i> Sample Text Here
+                        </li>
+                        <li>
+                           <i class="fa-solid fa-check"></i>
+                           Sample text Here
+                        </li>
+                        <li>
+                           <i class="fa-solid fa-check"></i>
+                           Sample text Here
+                        </li>
+                        <li>
+                           <i class="fa-solid fa-check"></i>
+                           Sample text Here
+                        </li>
+                        <li>
+                           <i class="fa-solid fa-xmark"></i>
+                           Sample text Here
+                        </li>
+                        <li>
+                           <i class="fa-solid fa-xmark"></i>
+                           Sample text Here
+                        </li>
+                     </ul>
+                     <div class="row center">
+                        <button href="#" class="custom-btn">More</button>
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+            <div class="col s12 m6 l3">
+               <div class="card">
+                  <div class="card-content center">
+                     <span class="card-title">Pro</span>
+                     <p class="card-desc">Sample Text Description</p>
+                     <ul>
+                        <li>
+                           <i class="fa-solid fa-check"></i> Sample Text Here
+                        </li>
+                        <li>
+                           <i class="fa-solid fa-check"></i>
+                           Sample text Here
+                        </li>
+                        <li>
+                           <i class="fa-solid fa-check"></i>
+                           Sample text Here
+                        </li>
+                        <li>
+                           <i class="fa-solid fa-check"></i>
+                           Sample text Here
+                        </li>
+                        <li>
+                           <i class="fa-solid fa-check"></i>
+                           Sample text Here
+                        </li>
+                        <li>
+                           <i class="fa-solid fa-check"></i>
+                           Sample text Here
+                        </li>
+                     </ul>
+                     <div class="row center">
+                        <button href="#" class="custom-btn">More</button>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+   </div>
+
+   <footer class="main-footer">
+
+   </footer>
+
+   <!-- fixedButton -->
+   <div class="fixed-action-btn hide-on-large-only">
+      <a class="btn-floating btn-large ">
+         <i style="background-color: #E8AC31;  color: #000;" class="large fa-solid fa-user"></i>
+      </a>
+
+      <ul>
+         <li>
+            <a href="#modal1" id="btnMobile" class="btn-floating modal-trigger">
+               <i id="icon-btnMobile" style="background-color: #E8AC31;  color: #000;"
+                  class="fa-solid fa-address-card"></i>
+            </a>
+         </li>
+      </ul>
+   </div>
+</body>
+
+<!-- materialize framework -->
+<script src="js/materialize.js"></script>
+
+<!-- chart.js library -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.2.0/chart.min.js"></script>
+
+<!-- js main -->
+<script src="/controllers/main.js"></script>
+
+<!-- js classes and views -->
+<script src="/controllers/views/init.js"></script>
+<script src="/controllers/views/dashboard.js"></script>
+<script src="/controllers/views/login-register.js"></script>
+<script src="/controllers/views/structure.js"></script>
+
+<!-- animated icons -->
+<script src="https://cdn.lordicon.com/fudrjiwc.js"></script>
+
+<!-- actions from materialize -->
+<script>
+   // action button to md and sm devices 
+   document.addEventListener('DOMContentLoaded', function () {
+      var elems = document.querySelectorAll('.fixed-action-btn');
+      var instances = M.FloatingActionButton.init(elems, {
+         direction: 'top',
+         hoverEnabled: false
+      });
+   });
+
+   // modal to lg devices
+   document.addEventListener('DOMContentLoaded', function () {
+      var elems = document.querySelectorAll('.modal');
+      var instances = M.Modal.init(elems);
+   });
+</script>
+
+</html>

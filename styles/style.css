@@ -1,0 +1,294 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,900;1,700&family=Poppins:wght@300;400;700;800&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css');
+
+:root {
+   --c1: #BE5FE8;
+   /* --c2: #2dcf84;
+   --c3: #48E89D; */
+   --c4: #E8AC31;
+   --c5: #000000;
+   --c6: #1a1515;
+
+   /* fonts */
+   --lato: 'Lato', sans-serif;
+   --poppins: 'Poppins', sans-serif;
+}
+
+/* ************************************************************* */
+/* ************************************************************* */
+
+body {
+   background-color: var(--c5);
+}
+
+html {
+   scroll-behavior: smooth;
+}
+
+/* scrollbar style */
+::-webkit-scrollbar {
+   width: 5px;
+   background-color: none;
+}
+
+::-webkit-scrollbar-track {
+   background-color: var(--c6);
+}
+
+::-webkit-scrollbar-thumb {
+   background-color: var(--c4);
+   border-radius: 5px;
+}
+
+
+/* ************************************************************* */
+/* ************************************************************* */
+
+/* title h1 */
+.t-desc {
+   font-family: var(--poppins);
+   font-weight: 600;
+   font-size: 2.5rem;
+   color: 000;
+}
+
+/* paragraph, span and hover description */
+.p-desc {
+   color: 000;
+   font-size: 2rem;
+   font-weight: 600;
+}
+
+.p-desc span {
+   color: var(--c4);
+   transition: border-bottom 1s ease;
+}
+
+.p-desc span:hover {
+   color: var(--c4);
+   transition: border-bottom 1s ease;
+   border-bottom: 2px solid var(--c4);
+}
+
+/* paragraph, span and hover description */
+
+/* customized button */
+.custom-btn {
+   width: 10rem;
+   height: 2rem;
+   background-color: var(--c4);
+   border-radius: 3.5px;
+   cursor: pointer;
+   color: #000000;
+   font-weight: 600;
+   font-family: var(--lato);
+   text-transform: uppercase;
+}
+
+.custom-btn-2 {
+   width: 10rem;
+   height: 2rem;
+   background-color: var(--c5);
+   border-radius: 3.5px;
+   cursor: pointer;
+   color: var(--c4);
+   font-weight: 600;
+   font-family: var(--lato);
+   margin: 10px 0 0 0;
+   text-transform: uppercase;
+   transition: background-color color 2s;
+}
+
+.custom-btn-2:hover {
+   transition: background-color color 2s;
+   background-color: var(--c5);
+   color: var(--c4);
+}
+
+/* document formatter */
+* {
+   padding: 0;
+   margin: 0;
+   border: 0;
+   box-sizing: border-box;
+}
+
+/* ************************************************************* */
+/* ************************************************************* */
+
+/* main-header */
+.main-header {
+   position: fixed;
+   width: 100%;
+   top: 0;
+   z-index: 1;
+}
+
+/* Nav Header */
+.main-header .nav-header {
+   padding: 0 25px;
+   background-color: var(--c5);
+}
+
+/* link style */
+.main-header ul a {
+   font-family: var(--lato);
+   font-weight: 600;
+   font-size: 16px;
+   color: var(--c4);
+}
+
+/* backgroundcolor transition */
+.main-header ul li {
+   transition: border-bottom 1s ease;
+}
+
+/* hover link header */
+.main-header ul li:hover {
+   transition: border-bottom 1s ease;
+   border-bottom: 1.2px solid var(--c4);
+}
+
+/* logo position */
+.nav-header .nav-wrapper .brand-logo {
+   font-family: var(--poppins);
+   font-weight: 600;
+   color: #fff;
+}
+
+/* modal */
+.modal {
+   border-radius: 10px !important;
+   background-color: var(--c5) !important;
+   color: var(--c4);
+}
+
+.modal .title-modal {
+   font-size: 1.5rem;
+   font-weight: 600;
+   font-family: var(--poppins);
+}
+
+.modal .modal-footer {
+   height: 10px !important;
+   background-color: var(--c5) !important;
+}
+
+.modal .modal-footer a.modal-close i {
+   padding: 5px 5px 0 0;
+   font-size: 1.7rem;
+   font-weight: 600;
+   color: var(--c4);
+}
+
+.modal .login-register-form .login .content-modal-login .input-field input {
+   color: var(--c4);
+}
+
+.modal .login-register-form .register .content-modal-register .input-field input {
+   color: var(--c4);
+}
+
+/* ************************************************************* */
+/* ************************************************************* */
+
+
+/* s-main */
+.s-main {
+   width: 100%;
+   height: 100vh;
+   margin: 4rem 0 0 0;
+   background-color: var(--c6);
+   color: #fff;
+}
+
+.advantages .desc {
+   color: #fff;
+   font-family: var(--lato);
+   font-size: 1.2rem;
+   font-weight: 600;
+   margin: 2rem 0 2rem 0;
+   letter-spacing: 1px;
+}
+
+.s-main .s-main-description {
+   padding: .4rem 25px;
+}
+
+/* ************************************************************* */
+/* ************************************************************* */
+
+/* s-prices */
+.s-prices {
+   width: 100%;
+   height: auto;
+   background-color: var(--c5);
+}
+
+.s-prices .card {
+   background-color: var(--c6);
+   border-radius: 7px;
+   transition: box-shadow 1.2s ease-in-out;
+}
+
+
+.s-prices .card:hover {
+   box-shadow: 0px 0px 15px 6px var(--c4);
+   transition: box-shadow 1.2s ease-in-out;
+}
+
+.s-prices .card .card-title {
+   font-family: var(--poppins);
+   font-weight: 600;
+   font-size: 1.8rem;
+   color: var(--c4);
+}
+
+.s-prices .card .card-desc {
+   font-family: var(--lato);
+   font-weight: 600;
+   font-size: .9rem;
+   color: #fff;
+   margin: 0 0 10px 0;
+   letter-spacing: 1px;
+}
+
+.s-prices .card .card-content ul {
+   margin: 10px 0 10px 0;
+   color: #fff;
+}
+
+.s-prices .card .card-content ul li {
+   padding: 5px 0 5px 0;
+   font-weight: 400;
+   font-family: var(--lato);
+}
+
+.s-prices .card .card-content ul li i {
+   padding: 0 10px 0 0;
+   font-size: 20px;
+   color: var(--c4);
+}
+
+/* ************************************************************* */
+/* ************************************************************* */
+
+
+/* responsive design to med and down devices */
+@media screen and (max-width:768px) {
+
+   /* logo position */
+   .nav-header .brand-logo {
+      text-align: center;
+      font-size: 20px;
+   }
+
+   .s-main {
+      height: auto;
+   }
+
+   .s-main .s-main-description {
+      text-align: center;
+   }
+
+}
