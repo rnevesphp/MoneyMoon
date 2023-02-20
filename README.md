@@ -1,2 +1,3 @@
 # MoneyMoon
- - A digital bank created specially to You -
+
+- A digital bank created specially to You.

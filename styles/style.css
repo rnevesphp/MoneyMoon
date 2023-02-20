@@ -292,3 +292,51 @@ html {
    }
 
 }
+
+ul li {
+   border-bottom: none;
+}
+
+
+/* clases generadas a traves de JS */
+.nav-header .nav-wrapper .ul-dash  {
+   width: 100%;
+   height: 100%;
+
+   
+}
+
+li.dash-li {
+   border-bottom: none;
+}
+
+li#logoutbtn i { 
+   color: var(--c4);
+   font-size: medium;
+
+   transition: 1s ease-in-out;
+
+   
+}
+
+li#logoutbtn i:hover {
+   transition: 1s ease-in-out;
+   font-size: large ;      
+}
+
+.nav-header .nav-wrapper #ul-dash .dash-li{
+   margin: 0 15px;
+}
+
+.nav-header .nav-wrapper #ul-dash .dash-li i#nav-mobile-2-icon { 
+   padding: 0 0 0 8px;
+   font-size: medium;
+}
+
+.nav-wrapper .ul-dash i#nav-mobile-2-icon { 
+   color: #E8AC31;
+}
+
+.fixed-action-btn .mobile-buttons .btn-floating i{ 
+   background-color: var(--c4);
+}
