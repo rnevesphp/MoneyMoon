@@ -2,37 +2,27 @@ class dashboard {
   constructor() {
     console.log("AQUI LLEGA... welcome... dashboard..");
 
-    this.mainCode = document.getElementById('main-code')
-    this.deleteMaincode(this.mainCode);
-
     this.a = document.getElementById('logOutHref')
-    this.erase(this.a);
+    this.erase(this.a)
+
+    this.mainCode = document.getElementById('main-code')
+    this.deleteMaincode(this.mainCode)
 
     this.btnMobile = document.getElementById('btnMobile')
     this.btnMobile.addEventListener('click', this.logout.bind(this));
 
-    this.icon = document.getElementById('icon-btnMobile');
-    this.icon.className = "fa-solid fa-xmark";
+    this.iconLogOut = document.getElementById('icon-btnMobile');
+    this.iconLogOut.className = "fa-solid fa-xmark";
 
     this.dashElem();
+
+
   }
 
-  deleteMaincode(elem) {
-    elem.remove();
-
-    return elem;
-  }
-
-  erase(elem) {
-    this.createLogOut();
-    elem.innerHTML = "";
-
-    return elem;
-  }
-
-
+  /**
+   * this method create a button to logout from the user account
+   */
   createLogOut() {
-
     this.logOutBTN = document.createElement('i');
     this.logOutBTN.setAttribute('class', 'icon-logout fa-solid fa-arrow-right-from-bracket')
 
@@ -42,6 +32,16 @@ class dashboard {
     this.logOutBTN.addEventListener("click", this.logout.bind(this));
   }
 
+  erase(elem) {
+    this.createLogOut();
+    elem.innerHTML = "";
+
+    return elem;
+  }
+
+  /**
+   * This method contains the logout logical
+   */
   logout() {
     console.log("TAMO AQUI NO CLICK DO LOGOUT ")
     this.session = sessionStorage;
@@ -50,7 +50,11 @@ class dashboard {
     location.reload();
   }
 
+  deleteMaincode(elem) {
+    elem.remove();
 
+    return elem;
+  }
 
   dashElem() {
     this.doc = document;
@@ -116,8 +120,6 @@ class dashboard {
     this.logo.remove()
 
 
-
-
     // buscamos los botones en version mobile
     this.ul_mobile = this.doc.querySelector('.mobile-buttons')
 
@@ -130,8 +132,7 @@ class dashboard {
     this.a_li_mobile_1.setAttribute('class', 'btn-floating')
 
     // creamos iconos
-    this.i_li_mobile_1.setAttribute('class', 'icon-mobile fa-solid fa-gear')
-
+    this.i_li_mobile_1.setAttribute('class', 'icon-mobilefa-solid fa-gear')
 
     // añadimos el icono dentro del ancla
     this.a_li_mobile_1.appendChild(this.i_li_mobile_1)
@@ -141,5 +142,11 @@ class dashboard {
 
     // añadiremos el elemento de la lista con el ancla dentro de la lista desordenada 
     this.ul_mobile.appendChild(this.li_mobile_1)
+
+    this.create();
+  }
+
+  create() {
+
   }
 }
