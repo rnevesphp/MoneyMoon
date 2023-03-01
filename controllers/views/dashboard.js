@@ -16,6 +16,7 @@ class initialPage {
 
     this.dashElem();
     this.struc();
+    // this.ds = new initialPage();
   }
 
   /**
@@ -100,10 +101,10 @@ class initialPage {
     this.li4.innerHTML = 'Profile';
 
     // añadiendo los clicks
-    // this.li1.addEventListener('click', this.initPage.bind(this))
-    // this.li2.addEventListener('click', this.wallets.bind(this))
-    // this.li3.addEventListener('click', this.settings.bind(this))
-    // this.li4.addEventListener('click', this.profile.bind(this))
+    this.li1.addEventListener('click', this.initPage.bind(this))
+    this.li2.addEventListener('click', this.wallets.bind(this))
+    this.li3.addEventListener('click', this.settings.bind(this))
+    this.li4.addEventListener('click', this.profile.bind(this))
 
     // añadiendo los iconos como hijos de los elementos
     this.li1.appendChild(this.i1)
@@ -123,6 +124,22 @@ class initialPage {
     // Haciendo el remove del logo para que este cuadrante entre la lista desordenada
     this.logo = this.doc.querySelector('.brand-logo');
     this.logo.remove()
+  }
+
+  settings() {
+    this.config = new config();
+  }
+
+  profile() {
+    this.pf = new profile();
+  }
+
+  initPage() {
+
+  }
+
+  wallets() {
+    this.w = new wallets();
   }
 
   struc() {
