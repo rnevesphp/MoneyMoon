@@ -16,8 +16,9 @@ class initialPage {
 
     this.dashElem();
     this.struc();
-    // this.ds = new initialPage();
   }
+
+
 
   /**
    * this method create a button to logout from the user account
@@ -32,12 +33,7 @@ class initialPage {
     this.logOutBTN.addEventListener("click", this.logout.bind(this));
   }
 
-  erase(elem) {
-    this.createLogOut();
-    elem.innerHTML = "";
 
-    return elem;
-  }
 
   /**
    * This method contains the logout logical
@@ -55,6 +51,15 @@ class initialPage {
 
     return elem;
   }
+
+  erase(elem) {
+    this.createLogOut();
+    elem.innerHTML = "";
+
+    return elem;
+  }
+
+
 
   dashElem() {
     this.doc = document;
@@ -125,6 +130,10 @@ class initialPage {
     this.logo = this.doc.querySelector('.brand-logo');
     this.logo.remove()
   }
+
+
+
+
 
   settings() {
     this.config = new config();
