@@ -26,6 +26,6 @@ class init {
    }
 
    runAccount() {
-      this.account = new dashboard();
+      this.account = new initialPage();
    }
 }

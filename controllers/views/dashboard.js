@@ -1,4 +1,4 @@
-class dashboard {
+class initialPage {
   constructor() {
     console.log("AQUI LLEGA... welcome... dashboard..");
 
@@ -15,8 +15,7 @@ class dashboard {
     this.iconLogOut.className = "fa-solid fa-xmark";
 
     this.dashElem();
-
-
+    this.struc();
   }
 
   /**
@@ -51,7 +50,7 @@ class dashboard {
   }
 
   deleteMaincode(elem) {
-    elem.remove();
+    elem.innerHTML = "";
 
     return elem;
   }
@@ -100,6 +99,12 @@ class dashboard {
     this.li3.innerHTML = 'Settings';
     this.li4.innerHTML = 'Profile';
 
+    // añadiendo los clicks
+    // this.li1.addEventListener('click', this.initPage.bind(this))
+    // this.li2.addEventListener('click', this.wallets.bind(this))
+    // this.li3.addEventListener('click', this.settings.bind(this))
+    // this.li4.addEventListener('click', this.profile.bind(this))
+
     // añadiendo los iconos como hijos de los elementos
     this.li1.appendChild(this.i1)
     this.li2.appendChild(this.i2)
@@ -118,30 +123,9 @@ class dashboard {
     // Haciendo el remove del logo para que este cuadrante entre la lista desordenada
     this.logo = this.doc.querySelector('.brand-logo');
     this.logo.remove()
+  }
 
-
-    // buscamos los botones en version mobile
-    this.ul_mobile = this.doc.querySelector('.mobile-buttons')
-
-    // creamos un elemento que añadiremos a la lista
-    this.li_mobile_1 = this.doc.createElement('li')
-    this.a_li_mobile_1 = this.doc.createElement('a')
-    this.i_li_mobile_1 = this.doc.createElement('i')
-
-    // creamos un elemento ancla (enlace)
-    this.a_li_mobile_1.setAttribute('class', 'btn-floating')
-
-    // creamos iconos
-    this.i_li_mobile_1.setAttribute('class', 'icon-mobilefa-solid fa-gear')
-
-    // añadimos el icono dentro del ancla
-    this.a_li_mobile_1.appendChild(this.i_li_mobile_1)
-
-    // dentro de la lista añadiremos el elemento ancla (enlace) creado anteriormente
-    this.li_mobile_1.appendChild(this.a_li_mobile_1);
-
-    // añadiremos el elemento de la lista con el ancla dentro de la lista desordenada 
-    this.ul_mobile.appendChild(this.li_mobile_1)
-
+  struc() {
+    this.st = new navStruc();
   }
 }
