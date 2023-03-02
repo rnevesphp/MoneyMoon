@@ -25,7 +25,7 @@ class initialPage {
    */
   createLogOut() {
     this.logOutBTN = document.createElement('i');
-    this.logOutBTN.setAttribute('class', 'icon-logout fa-solid fa-arrow-right-from-bracket')
+    this.logOutBTN.setAttribute('class', 'icon-logout fa-solid fa-xmark')
 
     this.li = document.getElementById('logoutbtn')
     this.li.appendChild(this.logOutBTN)
@@ -130,10 +130,6 @@ class initialPage {
     this.logo = this.doc.querySelector('.brand-logo');
     this.logo.remove()
   }
-
-
-
-
 
   settings() {
     this.config = new config();

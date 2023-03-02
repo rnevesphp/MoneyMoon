@@ -307,13 +307,9 @@ li.dash-li {
 
 li#logoutbtn i { 
    color: var(--c4);
-   font-size: medium;
-   transition: 1s ease-in-out;
-}
-
-li#logoutbtn i:hover {
-   transition: 1s ease-in-out;
-   font-size: large ;      
+   font-size: 2rem;
+   cursor: pointer;
+   padding: 0 0 0 5px;
 }
 
 .nav-header .nav-wrapper #ul-dash .dash-li{
@@ -350,7 +346,7 @@ li#logoutbtn i:hover {
 
 .sidenav .ul-sidenav { 
    position: absolute;
-   top: 80px;
+   top: 100px;
    left: 30px;
    width: 100%;
 }

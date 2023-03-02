@@ -160,6 +160,6 @@ class auth {
    userLogged(StorageKey, storageValue) {
       this.sStorage.setItem(StorageKey, JSON.stringify(storageValue))
 
-      this.nDash = new dashboard();
+      this.nDash = new initialPage();
    }
 }
