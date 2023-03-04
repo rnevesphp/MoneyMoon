@@ -8,6 +8,8 @@ class init {
       this.varSession = this.session.getItem("auth");
 
       this.verifySession();
+
+
    }
 
    verifySession() {
@@ -27,5 +29,7 @@ class init {
 
    runAccount() {
       this.account = new initialPage();
+      this.ct = new creator()
+      this.ct.dashElem()
    }
 }

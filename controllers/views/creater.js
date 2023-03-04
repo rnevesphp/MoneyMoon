@@ -1,6 +1,8 @@
 class creator {
     constructor() {
         console.log('Hey creator');
+
+        this.doc = document
     }
 
     destroyEl(element) {
@@ -61,22 +63,84 @@ class creator {
 
         // Haciendo el remove del logo para que este cuadrante entre la lista desordenada
         this.logo = this.doc.querySelector('.brand-logo');
-        this.destroyEl(this.logo)
+        this.logo.remove()
 
-        this.iP = new initialPage()
-        this.iP.createLogOut();
+        this.nav();
+        this.linkPages();
     }
+
+    nav() {
+        this.mainCode = this.doc.getElementById('main-code')
+        this.addAttr(this.mainCode, 'class', "main-code main-principal row")
+
+        this.sideNav = this.newElement('div')
+        this.addAttr(this.sideNav, 'class', "sidenav sidenav-fixed col s2")
+
+        this.content = this.doc.createElement('div')
+        this.addAttr(this.content, 'id', 'container-main');
+
+        this.mainCode.appendChild(this.sideNav)
+        this.mainCode.appendChild(this.content)
+    }
+
+    linkPages() {
+        this.ul = this.newElement('ul')
+        this.addAttr(this.ul, 'class', "ul-sidenav")
+
+        this.linkTransaction = this.newElement('li');
+        this.addAttr(this.linkTransaction, 'id', 'transaccion');
+        this.addAttr(this.linkTransaction, 'class', 'li-sidenav');
+        this.linkTransaction.innerHTML = "Operaciones"
+        this.linkTransaction.addEventListener('click', this.transaction.bind(this))
+
+        this.linkCards = this.newElement('li');
+        this.addAttr(this.linkCards, 'id', 'cards');
+        this.addAttr(this.linkCards, 'class', 'li-sidenav');
+        this.linkCards.innerHTML = "Tarjetas"
+        this.linkCards.addEventListener('click', this.cards.bind(this))
+
+        this.linkAssurance = this.newElement('li');
+        this.addAttr(this.linkAssurance, 'id', 'cards');
+        this.addAttr(this.linkAssurance, 'class', 'li-sidenav');
+        this.linkAssurance.innerHTML = "Seguros"
+        this.linkAssurance.addEventListener('click', this.seguros.bind(this))
+
+        this.linkMessages = this.newElement('li');
+        this.addAttr(this.linkMessages, 'id', 'cards');
+        this.addAttr(this.linkMessages, 'class', 'li-sidenav');
+        this.linkMessages.innerHTML = "Mensajería"
+        this.linkMessages.addEventListener('click', this.chatBotBank.bind(this))
+
+        this.ul.appendChild(this.linkTransaction)
+        this.ul.appendChild(this.linkCards)
+        this.ul.appendChild(this.linkAssurance)
+        this.ul.appendChild(this.linkMessages)
+
+        this.sideNav.appendChild(this.ul)
+    }
+
     wallets() {
         this.w = new wallets();
     }
     struc() {
         this.st = new navStruc();
     }
-
     profile() {
         this.pf = new profile();
     }
     settings() {
         this.config = new config();
+    }
+    transaction() {
+        this.tr = new transactions();
+    }
+    cards() {
+        this.card = new cards();
+    }
+    seguros() {
+        this.ass = new seguros();
+    }
+    chatBotBank() {
+        this.mgs = new messages();
     }
 }
