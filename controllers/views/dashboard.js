@@ -4,7 +4,6 @@ class initialPage {
 
     this.ct = new creator();
 
-
     this.mainCode = document.getElementById('main-code')
     this.a = document.getElementById('logOutHref')
     this.btnMobile = document.getElementById('btnMobile')
@@ -17,10 +16,9 @@ class initialPage {
     this.ct.destroyEl(this.mainCode)
 
     this.createLogOut();
+
+
   }
-
-
-
 
   /**
    * this method create a button to logout from the user account

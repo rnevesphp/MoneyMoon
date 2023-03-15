@@ -103,6 +103,24 @@ html {
    color: var(--c4);
 }
 
+
+.custom-btn-rounded {
+   text-align: center;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   width: 30px;
+   height: 30px;
+   background-color: var(--c4);
+   border-radius: 100%;
+   cursor: pointer;
+   color: #000000;
+   font-weight: 600;
+   font-family: var(--lato);
+
+}
+
+
 /* document formatter */
 * {
    padding: 0;
@@ -296,7 +314,7 @@ ul li {
 
 
 /* clases generadas a traves de JS */
-.nav-header .nav-wrapper .ul-dash  {
+.nav-header .nav-wrapper .ul-dash {
    width: 100%;
    height: 100%;
 }
@@ -305,81 +323,105 @@ li.dash-li {
    border-bottom: none;
 }
 
-li#logoutbtn i { 
+li#logoutbtn i {
    color: var(--c4);
    font-size: 2rem;
    cursor: pointer;
    padding: 0 0 0 5px;
 }
 
-.nav-header .nav-wrapper #ul-dash .dash-li{
+.nav-header .nav-wrapper #ul-dash .dash-li {
    margin: 0 15px;
    z-index: 1;
    cursor: pointer;
 }
 
-.nav-header .nav-wrapper #ul-dash .dash-li i#nav-mobile-2-icon { 
+.nav-header .nav-wrapper #ul-dash .dash-li i#nav-mobile-2-icon {
    padding: 0 0 0 8px;
    font-size: medium;
 }
 
-.nav-wrapper .ul-dash i#nav-mobile-2-icon { 
+.nav-wrapper .ul-dash i#nav-mobile-2-icon {
    color: #E8AC31;
 }
 
-.fixed-action-btn .mobile-buttons .btn-floating i{ 
+.fixed-action-btn .mobile-buttons .btn-floating i {
    background-color: var(--c4);
 }
 
-.main-code { 
+.main-code {
    background-color: #221d1d;
    height: 100vh;
    width: 100%;
 }
 
 .main-code .sidenav {
-   position: fixed; 
+   position: fixed;
    width: 250px;
    z-index: 0;
    background-color: var(--c4);
 }
 
-.sidenav .ul-sidenav { 
+.sidenav .ul-sidenav {
    position: absolute;
    top: 100px;
    left: 30px;
    width: 100%;
 }
 
-.sidenav .ul-sidenav .li-sidenav { 
+.sidenav .ul-sidenav .li-sidenav {
    width: 100%;
    font-size: 1rem;
    font-weight: 650;
-   padding: 0 10px ;
+   padding: 0 10px;
    cursor: pointer;
-   transition: 0.5s ;
+   transition: 0.5s;
 }
 
-.sidenav .ul-sidenav .li-sidenav:hover { 
+.sidenav .ul-sidenav .li-sidenav:hover {
    background-color: rgba(0, 0, 0, 0.1);
    color: #fff;
-   transition: 0.5s ;
+   transition: 0.5s;
 }
 
-.main-code .graphs { 
+.main-code .graphs {
    width: 100%;
    height: 100%;
 }
 
-#container-main { 
-
+#container-main {
    position: fixed;
-   top: 100px;
-
-   left: 300px;
-   width: 75%;
-   height: 80vh;
+   top: 90px;
+   left: 260px;
+   width: 80%;
+   height: 85vh;
    background-color: var(--c5);
 
    border-radius: 10px;
+
+   display: flex;
+   flex-direction: column;
+}
+
+.h1-main {
+   color: #fff;
+   font-size: 2rem;
+   font-weight: 700;
+}
+
+.p-main {
+   color: #fff;
+   font-size: 1.2rem;
+   font-weight: 700;
+}
+
+#container-main .tarjetas {
+   width: 100%;
+   height: auto;
+
+   margin: 0 20px 0 20px;
+
+   display: flex;
+   flex-direction: row;
+   align-items: center;
 }

@@ -17,4 +17,6 @@ class navStruc {
 
     this.c.appendChild(this.panel);
   }
+
+
 }

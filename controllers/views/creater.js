@@ -10,6 +10,16 @@ class creator {
         return element;
     }
 
+    addTitle(elem, text) {
+        elem.innerHTML = text;
+        return this.elem;
+    }
+
+    addSubTitle(elem, text) {
+        elem.innerHTML = text;
+        return elem;
+    }
+
     newElement(el) {
         this.elem = this.doc.createElement(el)
         return this.elem;
@@ -65,6 +75,10 @@ class creator {
         this.logo = this.doc.querySelector('.brand-logo');
         this.logo.remove()
 
+        this.container = this.doc.getElementById('container-main');
+
+
+
         this.nav();
         this.linkPages();
     }
@@ -81,6 +95,18 @@ class creator {
 
         this.mainCode.appendChild(this.sideNav)
         this.mainCode.appendChild(this.content)
+
+        this.ttl = this.newElement('h1');
+        this.msgTtl = this.newElement('p');
+
+        this.addTitle(this.ttl, 'Dashboard');
+        this.addSubTitle(this.msgTtl, 'Balance del Mes');
+
+        this.addAttr(this.ttl, 'class', 'h1-main')
+        this.addAttr(this.msgTtl, 'class', 'p-main')
+
+        this.content.appendChild(this.ttl);
+        this.content.appendChild(this.msgTtl);
     }
 
     linkPages() {
@@ -142,5 +168,43 @@ class creator {
     }
     chatBotBank() {
         this.mgs = new messages();
+    }
+
+
+    mainCards() {
+        this.container = this.doc.getElementById('container-main');
+        this.container.innerHTML = "";
+
+        this.divCard = this.newElement('div');
+        this.divCard2 = this.newElement('div');
+        this.ttl = this.newElement('h1');
+        this.msgTtl = this.newElement('p');
+        this.ibtn = this.newElement('i');
+        this.btn = this.newElement('div');
+
+
+        this.addAttr(this.ibtn, 'class', 'fa-solid fa-plus')
+        this.addAttr(this.ttl, 'class', 'h1-main')
+        this.addAttr(this.msgTtl, 'class', 'p-main')
+        this.addAttr(this.btn, 'class', 'custom-btn-rounded');
+        this.addAttr(this.divCard, 'class', 'tarjetas')
+
+        this.btn.addEventListener('click', this.newCard.bind(this))
+
+        this.addTitle(this.ttl, 'Tarjetas');
+        this.addSubTitle(this.msgTtl, 'Crea tarjetas digitales para uso diario  .');
+
+        this.divCard2.appendChild(this.ttl)
+        this.divCard2.appendChild(this.msgTtl)
+
+        this.divCard.appendChild(this.divCard2)
+        this.divCard.appendChild(this.btn)
+        this.btn.appendChild(this.ibtn)
+
+        this.container.appendChild(this.divCard);
+    }
+
+    newCard() {
+        this.cards.generateCard();
     }
 }
