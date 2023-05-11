@@ -9,7 +9,6 @@ class navStruc {
 
   panelPrincipal() {
     this.ct = new creator();
-
     this.c = this.doc.getElementById('container-main')
 
     this.panel = this.ct.newElement('div')
@@ -17,6 +16,4 @@ class navStruc {
 
     this.c.appendChild(this.panel);
   }
-
-
 }

@@ -1,6 +1,15 @@
+/**
+ * @author rnevesphp - Romeu Neves
+ */
+
+
 var web
 let webTitle = document.title
 
+
+/** 
+ * Funcion responsable de llamar el evento que cambia el titulo de la web e inicializar el código fuente
+ */
 window.onload = function () {
     this.dispatchEvent(new CustomEvent('changeWebTitle'));
 
@@ -9,6 +18,10 @@ window.onload = function () {
     }
 }
 
+/**
+ * Este evento es el responsable de cambiar el titulo de la web cuando el usuario abandone la pestaña donde
+ * está abierto el programa 
+ */
 window.addEventListener('changeWebTitle', () => {
     window.addEventListener('blur', () => {
         webTitle = document.title

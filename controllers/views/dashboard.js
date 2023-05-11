@@ -16,8 +16,6 @@ class initialPage {
     this.ct.destroyEl(this.mainCode)
 
     this.createLogOut();
-
-
   }
 
   /**
