@@ -1,6 +1,12 @@
+/** 
+ * @class auth 
+ * 
+*/
 class auth {
    /**
     * @author Romeu Neves - TheUncoder
+    * 
+    * @constructor 
    */
    constructor() {
       console.log("HOLA AUTH.....");
@@ -19,7 +25,7 @@ class auth {
    }
 
    /**
-    * This method catch all the info used on register and verify if is null or void 
+    * @method Reg catch all info used on register and verify if is null or void 
     * and send this info to a JSON to save the info into the LocalStorage. 
     */
    Reg() {
@@ -27,7 +33,7 @@ class auth {
       this.userMail = document.getElementById("email_reg").value;
       this.userPass = document.getElementById("password_reg").value;
 
-      this.userInfoToSetted = this.userData()
+      this.userInfoToSetted = this.createUser()
 
       /**
        * Operación ternaria - Sustituir el operacional IF por Ternaria a fin de dejar el código optimizado
@@ -36,14 +42,15 @@ class auth {
          this.userMail == "" || this.userMail == null &&
          this.userPass == "" || this.userPass == null
          ?
-         console.log("Rellena los campos de registro") : console.log("Click recebido...")
+         console.log("Rellena los campos de registro") : console.log("Registrado correctamente...")
       this.setUserLocally(this.auth, this.userInfoToSetted);
    }
 
    /**
+    * @method createUser create an object with the user infor
     * @returns an object with the user information
    */
-   userData() {
+   createUser() {
       this.InfoUserReg = {
          username: this.user,
          mail: this.userMail,
@@ -55,8 +62,10 @@ class auth {
    }
 
    /**
-    * @param {*} user 
-    * @param {*} infoUser 
+    * @method setUserLocally insert the user info into the LocalStorage
+    * 
+    * @param {string} user 
+    * @param {string} infoUser 
     */
    setUserLocally(user, infoUser) {
       this.storage.setItem(user, JSON.stringify(infoUser));
@@ -66,7 +75,7 @@ class auth {
    }
 
    /**
-   * this methods refresh the page after the user completes the register 
+   * @method reloadPage refresh the page after the user completes the register 
    */
    reloadPage() {
       window.alert("Estás registrado correctamente....\nHaz el login");
@@ -74,7 +83,7 @@ class auth {
    }
 
    /**
-    * this method get all the user info used to login and check if this info is 
+    * @method login get all the user info used to login and check if this info is 
     * info is null or void 
     */
    login() {
@@ -90,7 +99,9 @@ class auth {
    }
 
    /**
-    * @returns a object with your attributes thats contains mail and password used 
+    * @method getUser get the user information and insert into an object with his credentials
+    * 
+    * @returns an object with your attributes thats contains mail and password used 
     * for register
     */
    getUser() {
@@ -107,7 +118,7 @@ class auth {
    }
 
    /**
-    * This method we use to make a localStorage verification, 
+    * @method verifyLocal we use to make a localStorage verification, 
     * if the user exists. 
     */
    verifyLocal() {
@@ -117,7 +128,7 @@ class auth {
    }
 
    /**
-    * this method verify if the info of user used to login is the same info 
+    * @method verifyAuth verify if the info of user used to login is the same info 
     * used on register. 
     */
    verifyAuth() {
@@ -154,7 +165,7 @@ class auth {
    }
 
    /**
-    * This methods is the responsible to call's the next class that's create 
+    * @method userLogged is the responsible to call's the next class that's create 
     * a new dashboard with the user login 
     */
    userLogged(StorageKey, storageValue) {

@@ -9,7 +9,6 @@ class init {
     */
    constructor() {
       console.log('verificando sesión...')
-
       this.login;
       this.account;
       this.session = sessionStorage;
@@ -33,14 +32,18 @@ class init {
    }
 
    /**
-    * @method runLogin responsable de ir a parte principal de la web para que el usuario se registre o realice el login 
+    * @method runLogin Responsable de ir a parte principal de la web para que el usuario se registre o realice el login 
+    * 
+    * @this login representa la creación de una nueva clase que actua para el login del usuario.
     */
    runLogin() {
       this.login = new auth();
    }
 
    /**
-    * @method runAccount metodo que lleva el usuario a su cuenta y le muestra el dashboard principal
+    * @method runAccount Metodo que lleva el usuario a su cuenta y le muestra el dashboard principal
+    * 
+    * @this ct representa la llamada a una nueva clase creator
     */
    runAccount() {
       this.account = new initialPage();
