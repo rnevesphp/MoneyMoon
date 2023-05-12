@@ -1,6 +1,8 @@
 /**
  * @author rnevesphp - Romeu Neves
- * @class init
+ * @class init verify, register, save and do the login
+ * 
+ * @version 1.0.1
  */
 
 class init {

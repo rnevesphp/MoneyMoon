@@ -1,5 +1,7 @@
 /** 
- * @class auth 
+ * @class auth Make all verifications to register and logger users
+ * 
+ * @version 1.0.1
  * 
 */
 class auth {
