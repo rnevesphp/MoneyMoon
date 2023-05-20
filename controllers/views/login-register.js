@@ -66,8 +66,8 @@ class auth {
    /**
     * @method setUserLocally insert the user info into the LocalStorage
     * 
-    * @param {string} user 
-    * @param {string} infoUser 
+    * @param {string} user - is the key used to find the user credentials into localStorage.
+    * @param {string} infoUser - Is the object with all the user credentials used to register.
     */
    setUserLocally(user, infoUser) {
       this.storage.setItem(user, JSON.stringify(infoUser));
@@ -115,7 +115,6 @@ class auth {
          mail: this.showInfoUser.mail,
          password: this.showInfoUser.password
       }
-
       return this.userDataInsideStorage;
    }
 
