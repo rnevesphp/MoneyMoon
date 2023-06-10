@@ -87,62 +87,36 @@ class creator {
         this.mainCode = this.doc.getElementById('main-code')
         this.addAttr(this.mainCode, 'class', "main-code main-principal row")
 
-        this.sideNav = this.newElement('div')
-        this.addAttr(this.sideNav, 'class', "sidenav sidenav-fixed col s2")
+        this.StringWithHtmlToBeInserted = `
+            <nav id="sidenav-1" class="sidenav sidenav-fixed col s2">
+                <ul class="ul-sidenav" >
+                    <li class="li-sidenav" id="transaccion" >Operaciones</li>
+                    <li class="li-sidenav" id="cards" >Tarjetas</li>
+                    <li class="li-sidenav" id="seguros" >Seguros</li>
+                    <li class="li-sidenav" id="chat" >Mensajería</li>
+                </ul>
+            </nav>
+            
+            <div id="container-main">
+            <h1 class="h1-main">DashBoard</h1>    
+            <p class="p-main">Balance del Mes</p>
+        </div>`;
 
-        this.content = this.doc.createElement('div')
-        this.addAttr(this.content, 'id', 'container-main');
-
-        this.mainCode.appendChild(this.sideNav)
-        this.mainCode.appendChild(this.content)
-
-        this.ttl = this.newElement('h1');
-        this.msgTtl = this.newElement('p');
-
-        this.addTitle(this.ttl, 'Dashboard');
-        this.addSubTitle(this.msgTtl, 'Balance del Mes');
-
-        this.addAttr(this.ttl, 'class', 'h1-main')
-        this.addAttr(this.msgTtl, 'class', 'p-main')
-
-        this.content.appendChild(this.ttl);
-        this.content.appendChild(this.msgTtl);
+        this.mainCode.innerHTML = this.StringWithHtmlToBeInserted;
     }
 
     linkPages() {
-        this.ul = this.newElement('ul')
-        this.addAttr(this.ul, 'class', "ul-sidenav")
-
-        this.linkTransaction = this.newElement('li');
-        this.addAttr(this.linkTransaction, 'id', 'transaccion');
-        this.addAttr(this.linkTransaction, 'class', 'li-sidenav');
-        this.linkTransaction.innerHTML = "Operaciones"
+        this.linkTransaction = this.doc.getElementById('transaccion');
         this.linkTransaction.addEventListener('click', this.transaction.bind(this))
 
-        this.linkCards = this.newElement('li');
-        this.addAttr(this.linkCards, 'id', 'cards');
-        this.addAttr(this.linkCards, 'class', 'li-sidenav');
-        this.linkCards.innerHTML = "Tarjetas"
+        this.linkCards = this.doc.getElementById('cards');
         this.linkCards.addEventListener('click', this.cards.bind(this))
 
-        this.linkAssurance = this.newElement('li');
-        this.addAttr(this.linkAssurance, 'id', 'cards');
-        this.addAttr(this.linkAssurance, 'class', 'li-sidenav');
-        this.linkAssurance.innerHTML = "Seguros"
+        this.linkAssurance = this.doc.getElementById('seguros');
         this.linkAssurance.addEventListener('click', this.seguros.bind(this))
 
-        this.linkMessages = this.newElement('li');
-        this.addAttr(this.linkMessages, 'id', 'cards');
-        this.addAttr(this.linkMessages, 'class', 'li-sidenav');
-        this.linkMessages.innerHTML = "Mensajería"
+        this.linkMessages = this.doc.getElementById('chat');
         this.linkMessages.addEventListener('click', this.chatBotBank.bind(this))
-
-        this.ul.appendChild(this.linkTransaction)
-        this.ul.appendChild(this.linkCards)
-        this.ul.appendChild(this.linkAssurance)
-        this.ul.appendChild(this.linkMessages)
-
-        this.sideNav.appendChild(this.ul)
     }
 
     wallets() {
@@ -171,40 +145,5 @@ class creator {
     }
 
 
-    mainCards() {
-        this.container = this.doc.getElementById('container-main');
-        this.container.innerHTML = "";
 
-        this.divCard = this.newElement('div');
-        this.divCard2 = this.newElement('div');
-        this.ttl = this.newElement('h1');
-        this.msgTtl = this.newElement('p');
-        this.ibtn = this.newElement('i');
-        this.btn = this.newElement('div');
-
-
-        this.addAttr(this.ibtn, 'class', 'fa-solid fa-plus')
-        this.addAttr(this.ttl, 'class', 'h1-main')
-        this.addAttr(this.msgTtl, 'class', 'p-main')
-        this.addAttr(this.btn, 'class', 'custom-btn-rounded');
-        this.addAttr(this.divCard, 'class', 'tarjetas')
-
-        this.btn.addEventListener('click', this.newCard.bind(this))
-
-        this.addTitle(this.ttl, 'Tarjetas');
-        this.addSubTitle(this.msgTtl, 'Crea tarjetas digitales para uso diario  .');
-
-        this.divCard2.appendChild(this.ttl)
-        this.divCard2.appendChild(this.msgTtl)
-
-        this.divCard.appendChild(this.divCard2)
-        this.divCard.appendChild(this.btn)
-        this.btn.appendChild(this.ibtn)
-
-        this.container.appendChild(this.divCard);
-    }
-
-    newCard() {
-        this.cards.generateCard();
-    }
 }
