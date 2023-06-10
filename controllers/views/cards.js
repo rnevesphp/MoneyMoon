@@ -1,51 +1,75 @@
 class cards {
     constructor() {
-        this.cards = [];
+        this.doc = document;
+        this.cards = {};
         this.ct = new creator();
         this.mainCards()
 
-        this.btnAction = document.querySelector('custom-btn-rounded');
-        this.btnAction.addEventListener('click', this.generateCard.bind(this))
-    }
+        this.storage = localStorage;
 
-    generateCard() {
-        console('Nueva tarjeta')
+        this.newCardCredentials = {
+            cardNumber: this.cardNum,
+            cardSecurityCode: this.cvv
+        };
     }
 
     mainCards() {
+
         this.container = this.doc.getElementById('container-main');
         this.container.innerHTML = "";
 
-        this.divCard = this.newElement('div');
-        this.divCard2 = this.newElement('div');
-        this.ttl = this.newElement('h1');
-        this.msgTtl = this.newElement('p');
-        this.ibtn = this.newElement('i');
-        this.btn = this.newElement('div');
+        this.cardHeaderHTML = `
+        <div> 
+            <div class="tarjetas">
+                <h1 class="h1-main">Tarjetas</h1>
+                <p class="p-main">Crea tarjetas digitales para uso diario</p>
+            </div>
+            <div id="btn-card" class="custom-btn-rounded" >
+                <i class="fa-solid fa-plus"></i>
+            </div>
+        </div>`;
 
+        this.container.innerHTML = this.cardHeaderHTML;
 
-        this.addAttr(this.ibtn, 'class', 'fa-solid fa-plus')
-        this.addAttr(this.ttl, 'class', 'h1-main')
-        this.addAttr(this.msgTtl, 'class', 'p-main')
-        this.addAttr(this.btn, 'class', 'custom-btn-rounded');
-        this.addAttr(this.divCard, 'class', 'tarjetas')
-
+        this.btn = this.doc.getElementById('btn-card')
         this.btn.addEventListener('click', this.newCard.bind(this))
-
-        this.addTitle(this.ttl, 'Tarjetas');
-        this.addSubTitle(this.msgTtl, 'Crea tarjetas digitales para uso diario  .');
-
-        this.divCard2.appendChild(this.ttl)
-        this.divCard2.appendChild(this.msgTtl)
-
-        this.divCard.appendChild(this.divCard2)
-        this.divCard.appendChild(this.btn)
-        this.btn.appendChild(this.ibtn)
-
-        this.container.appendChild(this.divCard);
     }
 
     newCard() {
-        this.cards.generateCard();
+        this.generateCard();
+    }
+
+    generateCard() {
+        console.log('Nueva tarjeta')
+
+        this.generateRandomNumberForCard();
+        this.generateSecurityCodecard();
+    }
+
+    generateSecurityCodecard() {
+        alert('SECURITY CODE');
+
+        this.cvv = [];
+        for (var n = 0; n < 3; n++) {
+            this.randomSecurityCode = Math.floor(Math.random() * 9)
+            this.cvv.push(this.randomSecurityCode);
+        }
+        console.log(this.cvv)
+    }
+
+    generateRandomNumberForCard() {
+        alert('NUM GENERADO');
+
+        this.cardNum = [];
+        for (var t = 0; t < 16; t++) {
+            this.randomNum = Math.floor(Math.random() * 10)
+            this.cardNum.push(this.randomNum);
+        }
+        console.log(this.cardNum);
+    }
+
+    sendCardsToLocal() {
+
     }
 }
+
