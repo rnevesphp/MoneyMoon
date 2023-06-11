@@ -2,19 +2,19 @@ class cards {
     constructor() {
         this.doc = document;
         this.cards = {};
-        this.ct = new creator();
         this.mainCards()
 
         this.storage = localStorage;
 
         this.newCardCredentials = {
             cardNumber: this.cardNum,
-            cardSecurityCode: this.cvv
+            cardSecurityCode: this.cvv,
+            cardExpireDate: this.dateOfExp
         };
     }
 
+    // general method to create the main of card class
     mainCards() {
-
         this.container = this.doc.getElementById('container-main');
         this.container.innerHTML = "";
 
@@ -32,21 +32,20 @@ class cards {
         this.container.innerHTML = this.cardHeaderHTML;
 
         this.btn = this.doc.getElementById('btn-card')
-        this.btn.addEventListener('click', this.newCard.bind(this))
+        this.btn.addEventListener('click', this.generateCard.bind(this))
     }
 
-    newCard() {
-        this.generateCard();
-    }
-
+    // 
     generateCard() {
         console.log('Nueva tarjeta')
 
         this.generateRandomNumberForCard();
         this.generateSecurityCodecard();
+        this.generateDateOfExp()
         this.sendCardsToLocal();
     }
 
+    // generate random numbers for the security code of the card
     generateSecurityCodecard() {
         alert('SECURITY CODE');
 
@@ -58,6 +57,7 @@ class cards {
         console.log(this.cvv)
     }
 
+    // generate random numbers for the card 
     generateRandomNumberForCard() {
         alert('NUM GENERADO');
 
@@ -69,18 +69,22 @@ class cards {
         console.log(this.cardNum);
 
         this.convertArrNumCardToNormalNum();
+    }
+
+    // generate an expiration date
+    generateDateOfExp() {
+        const todayDate = new Date();
 
     }
 
+    // convert the arr with the card number into an integer with all numbers
     convertArrNumCardToNormalNum() {
-        this.cardNum;
-
-        for (var j = 0; j < this.cardNum.length(); j++) {
+        for (var j = 0; j < this.cardNum.length; j++) {
             console.log(this.cardNum[j]);
         }
     }
 
-
+    // sends the card info to relate with the user session
     sendCardsToLocal() {
 
     }

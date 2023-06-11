@@ -22,11 +22,13 @@ class initialPage {
    * this method create a button to logout from the user account
    */
   createLogOut() {
-    this.logOutBTN = this.ct.newElement('i');
-    this.ct.addAttr(this.logOutBTN, 'class', 'icon-logout fa-solid fa-xmark')
+    this.logOutBTN = `<i id="closeSession" class="icon-logout fa-solid fa-xmark"></i>`
+
     this.li = document.getElementById('logoutbtn')
-    this.li.appendChild(this.logOutBTN)
-    this.logOutBTN.addEventListener("click", this.logout.bind(this));
+    this.li.innerHTML = this.logOutBTN
+
+    this.logoutbtn = document.getElementById('closeSession');
+    this.logoutbtn.addEventListener("click", this.logout.bind(this));
   }
 
   /**

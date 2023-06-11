@@ -35,7 +35,6 @@ class init {
 
    /**
     * @method runLogin Responsable de ir a parte principal de la web para que el usuario se registre o realice el login 
-    * 
     * @this login representa la creación de una nueva clase que actua para el login del usuario.
     */
    runLogin() {
