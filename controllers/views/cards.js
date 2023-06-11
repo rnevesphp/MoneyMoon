@@ -44,6 +44,7 @@ class cards {
 
         this.generateRandomNumberForCard();
         this.generateSecurityCodecard();
+        this.sendCardsToLocal();
     }
 
     generateSecurityCodecard() {
@@ -66,7 +67,19 @@ class cards {
             this.cardNum.push(this.randomNum);
         }
         console.log(this.cardNum);
+
+        this.convertArrNumCardToNormalNum();
+
     }
+
+    convertArrNumCardToNormalNum() {
+        this.cardNum;
+
+        for (var j = 0; j < this.cardNum.length(); j++) {
+            console.log(this.cardNum[j]);
+        }
+    }
+
 
     sendCardsToLocal() {
 
