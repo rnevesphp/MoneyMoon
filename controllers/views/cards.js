@@ -35,7 +35,7 @@ class cards {
         this.btn.addEventListener('click', this.generateCard.bind(this))
     }
 
-    // 
+    // call all methods to crceate a new card
     generateCard() {
         console.log('Nueva tarjeta')
 
@@ -75,6 +75,15 @@ class cards {
     generateDateOfExp() {
         const todayDate = new Date();
 
+        let m = todayDate.getMonth()
+        let y = todayDate.getFullYear()
+
+        let fixedMont = m + 1;
+        let fixedYear = y + 5;
+
+        this.dateOfExp = `${fixedMont}/${fixedYear}`;
+
+        console.log(`${fixedMont}/${fixedYear}`)
     }
 
     // convert the arr with the card number into an integer with all numbers
