@@ -173,5 +173,6 @@ class auth {
       this.sStorage.setItem(StorageKey, JSON.stringify(storageValue))
 
       this.nDash = new initialPage();
+      location.reload()
    }
 }
