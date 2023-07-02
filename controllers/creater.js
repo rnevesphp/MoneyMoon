@@ -40,8 +40,6 @@ class creator {
     nav() {
         this.mainCode = this.doc.getElementById('main-code')
         this.addAttr(this.mainCode, 'class', "main-code main-principal row")
-        this.navbar = new navbar();
-        this.mainCode.innerHTML = this.navbar.createNav();
     }
 
     linkPages() {
