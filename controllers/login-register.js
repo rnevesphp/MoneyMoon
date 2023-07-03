@@ -11,7 +11,6 @@ class auth {
     * @constructor 
    */
    constructor() {
-      console.log("HOLA AUTH.....");
 
       this.nDash;
       this.auth = "auth";

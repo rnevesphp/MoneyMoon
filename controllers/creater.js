@@ -1,7 +1,5 @@
 class creator {
     constructor() {
-        console.log('Hey creator');
-
         this.doc = document
     }
 
@@ -31,15 +29,14 @@ class creator {
     }
 
     dashElem() {
-        this.container = this.doc.getElementById('container-main');
-
-        this.nav();
-        this.linkPages();
-    }
-
-    nav() {
         this.mainCode = this.doc.getElementById('main-code')
-        this.addAttr(this.mainCode, 'class', "main-code main-principal row")
+        this.addAttr(this.mainCode, 'class', "main-code main-principal row");
+
+        // Create NavBar and Link Pages to it
+        this.navClass = new navbar()
+        this.navElem = this.navClass.createNav()
+        this.mainCode.innerHTML = this.navElem;
+        this.linkPages();
     }
 
     linkPages() {
@@ -74,10 +71,6 @@ class creator {
 
     initialPage() {
         this.dashB = new initialPage();
-    }
-
-    struc() {
-        this.st = new navStruc();
     }
 
     profile() {

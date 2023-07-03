@@ -19,7 +19,7 @@ class cards {
         this.container.innerHTML = "";
 
         this.cardHeaderHTML = `
-        <div> 
+        <div class="card-container"> 
             <div class="tarjetas">
                 <h1 class="h1-main">Tarjetas</h1>
                 <p class="p-main">Crea tarjetas digitales para uso diario</p>
@@ -43,6 +43,7 @@ class cards {
         this.generateSecurityCodecard();
         this.generateDateOfExp()
         this.sendCardsToLocal();
+        this.generateVisualCard(this.cardNum, this.cvv, this.dateOfExp);
     }
 
     // generate random numbers for the security code of the card
@@ -97,5 +98,10 @@ class cards {
     sendCardsToLocal() {
 
     }
-}
 
+    generateVisualCard(cardNum, cvv, dateOfExp) {
+        let newCard = new cardTemplate(cardNum, cvv, dateOfExp);
+
+        return newCard;
+    }
+}

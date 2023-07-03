@@ -1,7 +1,5 @@
 class initialPage {
   constructor() {
-    console.log("AQUI LLEGA... welcome... dashboard..");
-
     this.ct = new creator();
 
     this.mainCode = document.getElementById('main-code')
