@@ -3,12 +3,13 @@ class cards {
         this.doc = document;
         this.cards = {};
         this.mainCards()
+        this.countCards = 0;
 
         this.storage = localStorage;
 
         this.newCardCredentials = {
-            cardNumber: this.cardNum,
-            cardSecurityCode: this.cvv,
+            cardNumber: this.cardNumStr,
+            cardSecurityCode: this.cvvStr,
             cardExpireDate: this.dateOfExp
         };
     }
@@ -39,16 +40,19 @@ class cards {
     generateCard() {
         console.log('Nueva tarjeta')
 
+        this.countCards = this.countCards + 1;
+
         this.generateRandomNumberForCard();
         this.generateSecurityCodecard();
         this.generateDateOfExp()
         this.sendCardsToLocal();
-        this.generateVisualCard(this.cardNum, this.cvv, this.dateOfExp);
+        // this.generateVisualCard(this.cardNumStr, this.cvvStr, this.dateOfExp);
+
     }
 
     // generate random numbers for the security code of the card
     generateSecurityCodecard() {
-        alert('SECURITY CODE');
+        console.log('SECURITY CODE');
 
         this.cvv = [];
         for (var n = 0; n < 3; n++) {
@@ -56,20 +60,23 @@ class cards {
             this.cvv.push(this.randomSecurityCode);
         }
         console.log(this.cvv)
+
+        this.cvvStr = this.cvv.toString();
+        console.log(this.cvvStr);
     }
 
     // generate random numbers for the card 
     generateRandomNumberForCard() {
-        alert('NUM GENERADO');
+        console.log('NUM GENERADO');
 
         this.cardNum = [];
         for (var t = 0; t < 16; t++) {
             this.randomNum = Math.floor(Math.random() * 10)
             this.cardNum.push(this.randomNum);
         }
-        console.log(this.cardNum);
 
-        this.convertArrNumCardToNormalNum();
+        this.cardNumStr = this.cardNum.toString();
+        console.log(this.cardNumStr);
     }
 
     // generate an expiration date
@@ -87,21 +94,24 @@ class cards {
         console.log(`${fixedMont}/${fixedYear}`)
     }
 
-    // convert the arr with the card number into an integer with all numbers
-    convertArrNumCardToNormalNum() {
-        for (var j = 0; j < this.cardNum.length; j++) {
-            console.log(this.cardNum[j]);
-        }
+
+    // setar a info dos cartoes em um objeto JSON com id , numero de cartao, cvv e data de validade
+    setInfoCard() {
+        /** 
+         * YOUR CODE GOES HERE!
+         */
     }
 
-    // sends the card info to relate with the user session
+    // criar funcao para mandar todos os cartoes com seus respectivos id's e numeros gerados
     sendCardsToLocal() {
-
+        /** 
+         * YOUR CODE GOES HERE!
+         */
     }
 
     generateVisualCard(cardNum, cvv, dateOfExp) {
         let newCard = new cardTemplate(cardNum, cvv, dateOfExp);
 
         return newCard;
-    }
+    };
 }

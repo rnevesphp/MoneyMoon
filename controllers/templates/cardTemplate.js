@@ -1,9 +1,9 @@
 class cardTemplate {
     constructor(numCard, dateCard, cvvNum) {
-        // this.auth = 'auth';
+        this.auth = 'auth';
 
-        // this.getUser();
-        // this.cardTempl();
+        this.user = this.getUser();
+        this.cardTempl(this.user);
 
         this.sStorage = sessionStorage;
 
@@ -11,16 +11,28 @@ class cardTemplate {
         this.numberCard = numCard;
         this.expirationDate = dateCard
 
-        this.auth = this.clsAuth.getUser();
-
         console.log(this.auth)
     }
 
-    cardTempl() {
+    getUser() {
+        this.getUserFromSession = JSON.parse(this.sStorage.getItem(this.auth));
+
+        this.userInfoSeted = {
+            user: this.getUserFromSession.username,
+            mail: this.getUserFromSession.mail,
+            passwd: this.getUserFromSession.password
+        }
+
+        let user = user;
+
+        return user;
+    }
+
+    cardTempl(user) {
         let cardTemplate = `
             <div class="template-card">
                 <div class="card-name">
-                    <span>${}</span>
+                    <span>${user}</span>
                 </div>
                 <div class="card-num">
                     <span>${this.numberCard}</span>
