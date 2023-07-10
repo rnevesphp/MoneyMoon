@@ -1,11 +1,11 @@
 class cardTemplate {
     constructor(numCard, dateCard, cvvNum) {
         this.auth = 'auth';
+        this.sStorage = sessionStorage;
 
         this.user = this.getUser();
         this.cardTempl(this.user);
 
-        this.sStorage = sessionStorage;
 
         this.numCvv = cvvNum;
         this.numberCard = numCard;
@@ -15,17 +15,16 @@ class cardTemplate {
     }
 
     getUser() {
-        this.getUserFromSession = JSON.parse(this.sStorage.getItem(this.auth));
+        let getUserFromSession = JSON.stringify(this.sStorage.getItem(this.auth));
+   
 
         this.userInfoSeted = {
             user: this.getUserFromSession.username,
             mail: this.getUserFromSession.mail,
             passwd: this.getUserFromSession.password
         }
-
-        let user = user;
-
-        return user;
+        console.log(this.userInfoSeted)
+        return this.userInfoSeted;
     }
 
     cardTempl(user) {

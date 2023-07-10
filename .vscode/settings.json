@@ -1,3 +1,7 @@
 {
-    "liveServer.settings.port": 5501
+    "liveServer.settings.port": 5501,
+    "editor.fontFamily": "'Jetbrains Mono'",
+    "editor.fontLigatures": true,
+    "auto-close-tag.insertSpaceBeforeSelfClosingTag": true,
+    "editor.fontSize": 15
 }
