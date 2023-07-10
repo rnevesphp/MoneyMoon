@@ -1,7 +1,7 @@
 class cards {
     constructor() {
         this.doc = document;
-        this.cards = {};
+        this.cards = [];
         this.mainCards()
         this.countCards = 0;
 
@@ -38,37 +38,52 @@ class cards {
 
     // call all methods to crceate a new card
     generateCard() {
-        console.log('Nueva tarjeta')
-
         this.countCards = this.countCards + 1;
+
+        // nova funcionalidade: limitar à 5 o numero de cartoes criados
+        // this.ctCards(); 
 
         this.generateRandomNumberForCard();
         this.generateSecurityCodecard();
         this.generateDateOfExp()
         this.sendCardsToLocal();
-        // this.generateVisualCard(this.cardNumStr, this.cvvStr, this.dateOfExp);
+        this.generateCardObject()
 
+        // nova func: gerar visualmente o HTML dos cartoes (criar template)
+        // this.generateVisualCard(this.cardNumStrF, this.cvvStrF, this.dateOfExp);
+
+    }
+
+    // this method returs an object with card info 
+    generateCardObject() {
+        let card = {
+            "id": `${this.countCards}`,
+            "number": `${this.cardNumStrF}`,
+            "securityCode": `${this.cvvStrF}`
+        }
+
+        // window.alert(`Card Info: ${card}`)
+        console.log(`Card Info: ${JSON.stringify(card)}`)
+
+        return JSON.stringify(card);
     }
 
     // generate random numbers for the security code of the card
     generateSecurityCodecard() {
-        console.log('SECURITY CODE');
-
         this.cvv = [];
         for (var n = 0; n < 3; n++) {
             this.randomSecurityCode = Math.floor(Math.random() * 9)
             this.cvv.push(this.randomSecurityCode);
         }
-        console.log(this.cvv)
 
         this.cvvStr = this.cvv.toString();
-        console.log(this.cvvStr);
+        this.cvvStrF = this.cvvStr.replaceAll(',', '');
+
+        console.log(this.cvvStrF);
     }
 
     // generate random numbers for the card 
     generateRandomNumberForCard() {
-        console.log('NUM GENERADO');
-
         this.cardNum = [];
         for (var t = 0; t < 16; t++) {
             this.randomNum = Math.floor(Math.random() * 10)
@@ -76,7 +91,9 @@ class cards {
         }
 
         this.cardNumStr = this.cardNum.toString();
-        console.log(this.cardNumStr);
+        this.cardNumStrF = this.cardNumStr.replaceAll(',', '');
+
+        console.log(this.cardNumStrF);
     }
 
     // generate an expiration date
