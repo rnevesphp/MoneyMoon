@@ -11,12 +11,11 @@ class cardTemplate {
         this.numberCard = numCard;
         this.expirationDate = dateCard
 
-        console.log(this.auth)
     }
 
     getUser() {
-        let getUserFromSession = JSON.stringify(this.sStorage.getItem(this.auth));
-   
+        this.getUserFromSession = JSON.stringify(this.sStorage.getItem(this.auth));
+
 
         this.userInfoSeted = {
             user: this.getUserFromSession.username,
