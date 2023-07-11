@@ -50,7 +50,7 @@ class cards {
         this.generateCardObject()
 
         // nova func: gerar visualmente o HTML dos cartoes (criar template)
-        this.generateVisualCard(this.cardNumStrF, this.cvvStrF, this.dateOfExp);
+        // this.generateVisualCard(this.cardNumStrF, this.cvvStrF, this.dateOfExp);
 
     }
 

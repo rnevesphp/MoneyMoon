@@ -6,7 +6,6 @@ class cardTemplate {
         this.user = this.getUser();
         this.cardTempl(this.user);
 
-
         this.numCvv = cvvNum;
         this.numberCard = numCard;
         this.expirationDate = dateCard
@@ -16,19 +15,19 @@ class cardTemplate {
     getUser() {
         this.getUserFromSession = JSON.stringify(this.sStorage.getItem(this.auth));
 
-
         this.userInfoSeted = {
             user: this.getUserFromSession.username,
             mail: this.getUserFromSession.mail,
             passwd: this.getUserFromSession.password
         }
         console.log(this.userInfoSeted)
+
         return this.userInfoSeted;
     }
 
     cardTempl(user) {
         let cardTemplate = `
-            <div class="template-card">
+            <div class="container template-card">
                 <div class="card-name">
                     <span>${user}</span>
                 </div>
