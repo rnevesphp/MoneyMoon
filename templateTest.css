@@ -1,0 +1,37 @@
+.container {
+    padding: 5px ; 
+    border: 1px solid red;
+}
+
+.template-card {
+    color: white;
+    background-color: black;
+    font-size:.8rem!important;
+    border-radius: 7px ;
+
+    width: 50%;
+    height: 7rem;
+}
+
+.container .g1 .g2 {
+    
+}
+.card-name {
+    margin: 10px 0 10px 0;
+}
+
+.card-num {
+    margin: 10px 0 10px 0;
+}
+
+.card-date{
+    margin: 10px 0 10px 0;
+}
+
+.card-cvv { 
+    margin: 10px 0 10px 0;
+}
+
+.deleteCard {
+    background-color: aqua;
+}

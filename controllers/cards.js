@@ -49,9 +49,6 @@ class cards {
         this.sendCardsToLocal();
         this.generateCardObject()
 
-        // nova func: gerar visualmente o HTML dos cartoes (criar template)
-        // this.generateVisualCard(this.cardNumStrF, this.cvvStrF, this.dateOfExp);
-
     }
 
     // this method returs an object with card info 
@@ -63,7 +60,10 @@ class cards {
         }
 
         // window.alert(`Card Info: ${card}`)
-        console.log(`Card Info: ${JSON.stringify(card)}`)
+        //console.log(`Card Info: ${JSON.stringify(card)}`)
+
+        // nova func: gerar visualmente o HTML dos cartoes (criar template)
+        this.generateVisualCard(this.cardNumStrF, this.dateOfExp, this.cvvStrF );
 
         return JSON.stringify(card);
     }
@@ -77,7 +77,7 @@ class cards {
         }
 
         this.cvvStr = this.cvv.toString();
-        this.cvvStrF = this.cvvStr.replaceAll(',', '');
+        this.cvvStrF = this.cvvStr.replaceAll(',' , '');
 
         console.log(this.cvvStrF);
     }
@@ -127,8 +127,8 @@ class cards {
     }
 
     generateVisualCard(cardNum, cvv, dateOfExp) {
-        let newCard = new cardTemplate(cardNum, cvv, dateOfExp);
+        this.newCard = new cardTemplate(cardNum, cvv, dateOfExp);
 
-        return newCard;
+        return this.newCard;
     };
 }
