@@ -28,12 +28,16 @@ class cards {
             <div id="btn-card" class="custom-btn-rounded" >
                 <i class="fa-solid fa-plus"></i>
             </div>
+            <div id="cardtemplate">
+                ${this.newCard}
+            </div>
         </div>`;
-
+    
         this.container.innerHTML = this.cardHeaderHTML;
 
         this.btn = this.doc.getElementById('btn-card')
         this.btn.addEventListener('click', this.generateCard.bind(this))
+    
     }
 
     // call all methods to crceate a new card
@@ -48,7 +52,6 @@ class cards {
         this.generateDateOfExp()
         this.sendCardsToLocal();
         this.generateCardObject()
-
     }
 
     // this method returs an object with card info 
@@ -59,10 +62,7 @@ class cards {
             "securityCode": `${this.cvvStrF}`
         }
 
-        // window.alert(`Card Info: ${card}`)
-        //console.log(`Card Info: ${JSON.stringify(card)}`)
-
-        // nova func: gerar visualmente o HTML dos cartoes (criar template)
+        // this method create the HTML template to inserto into the code
         this.generateVisualCard(this.cardNumStrF, this.dateOfExp, this.cvvStrF );
 
         return JSON.stringify(card);
@@ -78,8 +78,6 @@ class cards {
 
         this.cvvStr = this.cvv.toString();
         this.cvvStrF = this.cvvStr.replaceAll(',' , '');
-
-        console.log(this.cvvStrF);
     }
 
     // generate random numbers for the card 
@@ -93,7 +91,7 @@ class cards {
         this.cardNumStr = this.cardNum.toString();
         this.cardNumStrF = this.cardNumStr.replaceAll(',', '');
 
-        console.log(this.cardNumStrF);
+        //console.log(this.cardNumStrF);
     }
 
     // generate an expiration date
@@ -108,7 +106,7 @@ class cards {
 
         this.dateOfExp = `${fixedMont}/${fixedYear}`;
 
-        console.log(`${fixedMont}/${fixedYear}`)
+        //console.log(`${fixedMont}/${fixedYear}`)
     }
 
 
@@ -129,6 +127,5 @@ class cards {
     generateVisualCard(cardNum, cvv, dateOfExp) {
         this.newCard = new cardTemplate(cardNum, cvv, dateOfExp);
 
-        return this.newCard;
     };
 }
