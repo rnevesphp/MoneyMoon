@@ -4,6 +4,8 @@ class cardTemplate {
     this.userJSON = this.getUser();
 
     this.cardTempl(numCard, dateCard, cvvNum, this.userJSON);
+
+    //this.showCard(this.cardTempl); 
   }
 
   getUser() {
@@ -15,16 +17,15 @@ class cardTemplate {
       passwd: this.getUserFromSession.password,
     };
 
-    // console.log(`${this.userInfoSeted}\n\n ${this.getUserFromSession.username}`)
-
     return this.getUserFromSession.username;
   }
 
   cardTempl(numCard, dateOfExp, numCVV, userJSON) {
     console.log(`${userJSON}\n${numCard}\n${dateOfExp}\n${numCVV}`);
 
-    let cardTemplate = `
+    this.cardTemplate = `
         <div class="container-cards center-align container">
+
         <div class="valign-wrapper center-align row template-card">
             <div class="g1 col s6">
             <div class="card-name">
@@ -46,6 +47,7 @@ class cardTemplate {
         <div class="deleteCard center-align  btn-small">
             <i class="fa-solid fa-trash"></i>
         </div>
+
         </div>
     `;
 

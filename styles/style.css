@@ -462,3 +462,19 @@ li#logoutbtn i {
 
 
 }
+
+.card-name {
+   margin: 10px 0 10px 0;
+}
+
+.card-num {
+   margin: 10px 0 10px 0;
+}
+
+.card-date{
+   margin: 10px 0 10px 0;
+}
+
+.card-cvv { 
+   margin: 10px 0 10px 0;
+}

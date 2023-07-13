@@ -13,9 +13,6 @@
     height: 7rem;
 }
 
-.container .g1 .g2 {
-    
-}
 .card-name {
     margin: 10px 0 10px 0;
 }
@@ -32,6 +29,6 @@
     margin: 10px 0 10px 0;
 }
 
-.deleteCard {
-    background-color: aqua;
+.bt-small {
+    background-color: rgb(255, 121, 121);
 }
