@@ -3,9 +3,7 @@ class cardTemplate {
     this.sStorage = sessionStorage;
     this.userJSON = this.getUser();
 
-    this.cardTempl(numCard, dateCard, cvvNum, this.userJSON);
-
-    //this.showCard(this.cardTempl); 
+    return this.cardTempl(numCard, dateCard, cvvNum, this.userJSON);
   }
 
   getUser() {
@@ -17,7 +15,7 @@ class cardTemplate {
       passwd: this.getUserFromSession.password,
     };
 
-    return this.getUserFromSession.username;
+    return this.getUserFromSession.username
   }
 
   cardTempl(numCard, dateOfExp, numCVV, userJSON) {
@@ -50,7 +48,7 @@ class cardTemplate {
 
         </div>
     `;
-
-    return cardTemplate;
+    console.log(this.cardTemplate)
+    return JSON.stringify(this.cardTemplate)
   }
 }

@@ -29,7 +29,6 @@ class cards {
                 <i class="fa-solid fa-plus"></i>
             </div>
             <div id="cardtemplate">
-                ${this.newCard}
             </div>
         </div>`;
     
@@ -47,10 +46,10 @@ class cards {
         // nova funcionalidade: limitar à 5 o numero de cartoes criados
         // this.ctCards(); 
 
-        this.generateRandomNumberForCard();
-        this.generateSecurityCodecard();
+        this.generateRandomNumberForCard()
+        this.generateSecurityCodecard()
         this.generateDateOfExp()
-        this.sendCardsToLocal();
+        this.sendCardsToLocal()
         this.generateCardObject()
     }
 
@@ -90,8 +89,6 @@ class cards {
 
         this.cardNumStr = this.cardNum.toString();
         this.cardNumStrF = this.cardNumStr.replaceAll(',', '');
-
-        //console.log(this.cardNumStrF);
     }
 
     // generate an expiration date
@@ -105,8 +102,6 @@ class cards {
         let fixedYear = y + 5;
 
         this.dateOfExp = `${fixedMont}/${fixedYear}`;
-
-        //console.log(`${fixedMont}/${fixedYear}`)
     }
 
 
@@ -126,6 +121,11 @@ class cards {
 
     generateVisualCard(cardNum, cvv, dateOfExp) {
         this.newCard = new cardTemplate(cardNum, cvv, dateOfExp);
+        
+        this.cardJSONTempl = JSON.stringify(this.newCard)
+        console.log(this.newCard)
 
+        this.cardsContainer = this.doc.getElementById('cardtemplate'); 
+        this.cardsContainer.innerHTML = this.newCard;
     };
 }
