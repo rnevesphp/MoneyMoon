@@ -48,13 +48,14 @@ class cards {
         // nova funcionalidade: limitar à 5 o numero de cartoes criados
         // this.ctCards(); 
 
+        this.cardInfo = this.generateCardObject()
+
         this.generateRandomNumberForCard()
         this.generateSecurityCodecard()
         this.generateDateOfExp()
         this.sendCardsToLocal()
-        this.generateCardObject()
-
-        this.limitsCard(); 
+        
+        this.limitsCard(this.countCards , this.cardInfo); 
         console.log("Cartão gerado com sucesso!"); 
     }
 
@@ -109,19 +110,22 @@ class cards {
         this.dateOfExp = `${fixedMont}/${fixedYear}`;
     }
 
-
-    // setar a info dos cartoes em um objeto JSON com id , numero de cartao, cvv e data de validade
-    setInfoCard() {
-        /** 
-         * YOUR CODE GOES HERE!
-         */
-    }
-
     // criar funcao para mandar todos os cartoes com seus respectivos id's e numeros gerados
     sendCardsToLocal() {
         /** 
          * YOUR CODE GOES HERE!
          */
+    }
+
+    limitsCard(numC , info) { 
+        this.arrOfCards = []
+
+        if (numC == 5 ) {
+            this.arrOfCards.push(info); 
+            console.log(this.arrOfCards)
+        } else {
+            console.log("Ya no puedes crear tarjetas")
+        }
     }
 
     generateVisualCard(cardNum, cvv, dateOfExp) {
