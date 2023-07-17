@@ -20,17 +20,19 @@ class cards {
         this.container.innerHTML = "";
 
         this.cardHeaderHTML = `
-        <div class="card-container"> 
-            <div class="tarjetas">
-                <h1 class="h1-main">Tarjetas</h1>
-                <p class="p-main">Crea tarjetas digitales para uso diario</p>
+            <div class="card-container row"> 
+                <div class="tarjetas">
+                    <h1 class="h1-main">Tarjetas</h1>
+                    <p class="p-main">Crea tarjetas digitales para uso diario</p>
+                </div>
+                <div id="btn-card" class="custom-btn-rounded" >
+                    <i class="fa-solid fa-plus"></i>
+                </div>
             </div>
-            <div id="btn-card" class="custom-btn-rounded" >
-                <i class="fa-solid fa-plus"></i>
-            </div>
-            <div id="cardtemplate">
-            </div>
-        </div>`;
+
+            <div id="cardtemplate" class="template-card row">
+
+            </div>`;
     
         this.container.innerHTML = this.cardHeaderHTML;
 
@@ -51,6 +53,9 @@ class cards {
         this.generateDateOfExp()
         this.sendCardsToLocal()
         this.generateCardObject()
+
+        this.limitsCard(); 
+        console.log("Cartão gerado com sucesso!"); 
     }
 
     // this method returs an object with card info 
@@ -121,9 +126,6 @@ class cards {
 
     generateVisualCard(cardNum, cvv, dateOfExp) {
         this.newCard = new cardTemplate(cardNum, cvv, dateOfExp);
-        
-        this.cardJSONTempl = JSON.stringify(this.newCard)
-        console.log(this.newCard)
 
         this.cardsContainer = this.doc.getElementById('cardtemplate'); 
         this.cardsContainer.innerHTML = this.newCard;
