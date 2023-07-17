@@ -463,6 +463,10 @@ li#logoutbtn i {
 
 }
 
+#container-main #cardtemplate{
+   color: #fff;
+}
+
 .card-name {
    margin: 10px 0 10px 0;
 }

@@ -24,31 +24,31 @@ class cardTemplate {
     this.cardTemplate = `
         <div class="container-cards center-align container">
 
-        <div class="valign-wrapper center-align row template-card">
-            <div class="g1 col s6">
-            <div class="card-name">
-                <span>${userJSON}</span>
-            </div>
-            <div class="card-num">
-                <span>${numCard}</span>
-            </div>
-            </div>
-            <div class="g2 col s6">
-            <div class="card-date">
-                <span>${dateOfExp}</span>
-            </div>
-            <div class="card-cvv">
-                <span>${numCVV}</span>
-            </div>
-            </div>
-        </div>
-        <div class="deleteCard center-align  btn-small">
-            <i class="fa-solid fa-trash"></i>
-        </div>
-
+          <div class="valign-wrapper center-align row template-card">
+              <div class="g1 col s6">
+              <div class="card-name">
+                  <span>${userJSON}</span>
+              </div>
+              <div class="card-num">
+                  <span>${numCard}</span>
+              </div>
+              </div>
+              <div class="g2 col s6">
+              <div class="card-date">
+                  <span>${dateOfExp}</span>
+              </div>
+              <div class="card-cvv">
+                  <span>${numCVV}</span>
+              </div>
+              </div>
+          </div>
+          <div class="deleteCard center-align  btn-small">
+              <i class="fa-solid fa-trash"></i>
+          </div>
         </div>
     `;
+    
     console.log(this.cardTemplate)
-    return JSON.stringify(this.cardTemplate)
+    return this.cardTemplate
   }
 }
