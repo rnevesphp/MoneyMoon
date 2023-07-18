@@ -132,6 +132,6 @@ class cards {
         this.newCard = new cardTemplate(cardNum, cvv, dateOfExp);
 
         this.cardsContainer = this.doc.getElementById('cardtemplate'); 
-        this.cardsContainer.innerHTML = this.newCard;
+        this.cardsContainer.innerHTML = JSON.stringify( this.newCard);
     };
 }
