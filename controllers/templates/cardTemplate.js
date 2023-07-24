@@ -43,7 +43,7 @@ class cardTemplate {
               </div>
           </div>
           <div class="deleteCard center-align btn-small">
-              <i class="fa-solid fa-trash"></i>
+              <i id="btnErase" class="fa-solid fa-trash"></i>
           </div>
         </div>
     `;
