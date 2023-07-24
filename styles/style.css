@@ -459,12 +459,29 @@ li#logoutbtn i {
 
    display: flex;
    flex-direction: column;
-
-
 }
 
 #container-main #cardtemplate{
    color: #fff;
+   width: 100%;
+   padding: 20px 10px ;
+}
+
+.container-cards {
+   width: 40%;
+}
+
+.template-card-final {
+   border-radius: 7px;
+   background-color: #555;
+   height: 8rem;
+   font-family: 'Poppins';
+   font-weight: 500;
+}
+
+.deleteCard {
+   display: flex;
+   align-items: center;
 }
 
 .card-name {

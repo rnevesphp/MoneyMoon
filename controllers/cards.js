@@ -131,7 +131,11 @@ class cards {
     generateVisualCard(cardNum, cvv, dateOfExp) {
         this.newCard = new cardTemplate(cardNum, cvv, dateOfExp);
 
+        this.usr = this.newCard.getUser(); 
+
+        let template = this.newCard.cardTempl(cardNum, cvv, dateOfExp, this.usr)
+
         this.cardsContainer = this.doc.getElementById('cardtemplate'); 
-        this.cardsContainer.innerHTML = JSON.stringify( this.newCard);
+        this.cardsContainer.innerHTML = template;
     };
 }
