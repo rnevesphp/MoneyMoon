@@ -1,49 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
 
-    <link rel="stylesheet" href="templateTest.css" />
-    <link rel="stylesheet" href="styles/materialize.css" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
 
-    <!-- fontAwesome -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
-      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-  </head>
-  <body>
-    <div class="container-cards center-align container">
-      <div class="valign-wrapper center-align row template-card">
-        <div class="g1 col s6">
-          <div class="card-name">
-            <span>${user}</span>
-          </div>
-          <div class="card-num">
-            <span>${this.numberCard}</span>
-          </div>
+  <link rel="stylesheet" href="templateTest.css" />
+  <link rel="stylesheet" href="styles/materialize.css" />
+
+  <!-- fontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+  <div class="container">
+    <div class="qr1">
+      <div class="field1">
+        <span>Concepto</span>
+        <input type="text" name="field1" id="field1">
+      </div>
+
+      <div class="field2">
+        <div class="f3">
+          <span>Valor</span>
+          <input type="" name="" id="">
         </div>
-        <div class="g2 col s6">
-          <div class="card-date">
-            <span>${this.expirationDate}</span>
-          </div>
-          <div class="card-cvv">
-            <span>${this.numCvv}</span>
-          </div>
+        <div class="f4">
+          <span>Tipo Transacción</span>
+          <select name="transacctions" id="transacctions">
+            <option value="out">saidas</option>
+            <option value="in">entradas</option>
+          </select>
         </div>
       </div>
-      <div class="deleteCard center-align  btn-small">
-        <i class="fa-solid fa-trash"></i>
+
+      <div class="field3">
+
       </div>
     </div>
-  </body>
-  <script src="js/materialize.js"></script>
 
-  <!-- chart.js library -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.2.0/chart.min.js"></script>
+    <div class="qr2">
+
+    </div>
+  </div>
+
+
+</body>
+<script src="js/materialize.js"></script>
+
+<!-- chart.js library -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.2.0/chart.min.js"></script>
+
 </html>

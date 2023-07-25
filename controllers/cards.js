@@ -12,11 +12,6 @@ class cards {
             cardSecurityCode: this.cvvStr,
             cardExpireDate: this.dateOfExp,
         };
-
-
-
-
-
     }
 
     // general method to create the main of card class
@@ -145,15 +140,14 @@ class cards {
     }
 
     /*
-    // print all cards inside the list
-    printCards() {
-      /*
-          for(let c = 0; this.cards.length; c++) { 
-              return c; 
-          }  
-    } */
-
-
+        // print all cards inside the list
+        printCards() {
+        /*
+            for(let c = 0; this.cards.length; c++) { 
+                return c; 
+            }  
+        } 
+    */
 
     eraseCards() {
         alert('BORRANDOOOOOO');

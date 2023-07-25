@@ -122,10 +122,12 @@ class auth {
     * if the user exists. 
     */
    verifyLocal() {
-      this.storage.getItem(this.auth) == null ||
-         this.storage.getItem(this.auth) == "" ? console.log(`Usuario no encontrado`) : console.log(`Usuario encontrado`)
+      this.storage.getItem(this.auth) == null || this.storage.getItem(this.auth) == "" ? console.log(`Usuario no encontrado`) : console.log(`Usuario encontrado`)
       this.verifyAuth();
    }
+
+   // if ( is = 0 && is ==0) { codigo goes here } else { outra funcao }; 
+   //  is = 0 && is ==0 ? codigo goes here : outra funcao  ; 
 
    /**
     * @method verifyAuth verify if the info of user used to login is the same info 
@@ -149,13 +151,16 @@ class auth {
       }
 
       if (this.nameSeted == this.userLog) {
+
          if (this.mailSeted == this.mailLog) {
+
             if (this.passSeted == this.passLog) {
                console.log("Datos correctos...");
                this.userLogged(this.auth, this.InfoUserLog);
             } else {
                console.log("contraseña invalida");
             }
+
          } else {
             console.log("correo invalido");
          }
