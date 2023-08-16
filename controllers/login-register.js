@@ -120,14 +120,12 @@ class auth {
    /**
     * @method verifyLocal we use to make a localStorage verification, 
     * if the user exists. 
+    * 
     */
    verifyLocal() {
       this.storage.getItem(this.auth) == null || this.storage.getItem(this.auth) == "" ? console.log(`Usuario no encontrado`) : console.log(`Usuario encontrado`)
       this.verifyAuth();
    }
-
-   // if ( is = 0 && is ==0) { codigo goes here } else { outra funcao }; 
-   //  is = 0 && is ==0 ? codigo goes here : outra funcao  ; 
 
    /**
     * @method verifyAuth verify if the info of user used to login is the same info 
