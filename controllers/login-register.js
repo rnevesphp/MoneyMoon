@@ -11,7 +11,6 @@ class auth {
     * @constructor 
    */
    constructor() {
-
       this.nDash;
       this.auth = "auth";
 
@@ -149,22 +148,20 @@ class auth {
       }
 
       if (this.nameSeted == this.userLog) {
-
          if (this.mailSeted == this.mailLog) {
-
             if (this.passSeted == this.passLog) {
                console.log("Datos correctos...");
                this.userLogged(this.auth, this.InfoUserLog);
             } else {
                console.log("contraseña invalida");
             }
-
          } else {
             console.log("correo invalido");
          }
       } else {
          console.log('Usuario invalido')
       }
+
    }
 
    /**
