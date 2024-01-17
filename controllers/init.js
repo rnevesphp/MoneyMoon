@@ -15,7 +15,6 @@ class init {
       this.account;
       this.session = sessionStorage;
       this.varSession = this.session.getItem("auth");
-
       this.verifySession();
    }
 
@@ -43,7 +42,6 @@ class init {
 
    /**
     * @method runAccount Metodo que lleva el usuario a su cuenta y le muestra el dashboard principal
-    * 
     * @this ct representa la llamada a una nueva clase creator
     */
    runAccount() {

@@ -38,7 +38,11 @@ class cards {
 
         this.btn = this.doc.getElementById("btn-card");
         this.btn.addEventListener("click", this.generateCard.bind(this));
+
+
+
     }
+
 
     // call all methods to crceate a new card
     generateCard() {
@@ -100,16 +104,19 @@ class cards {
 
         // this method create the HTML template to inserto into the code
         this.generateVisualCard(this.cardNumStrF, this.dateOfExp, this.cvvStrF)
-
+        this.sendCardsToLocal();
         // this.printCards();
+
         return JSON.stringify(card);
     }
 
+
     // this method sends the cards to LocalStorage 
     sendCardsToLocal() {
-        /**
-         * YOUR CODE GOES HERE!
-         */
+
+        for (let i = 0; this.cards.length > i; i += 1) {
+            this.storage.setItem(i, this.cards[i])
+        }
     }
 
     // this methos will be used to limits the number of cards in 5
@@ -131,25 +138,18 @@ class cards {
         let template = this.newCard.cardTempl(cardNum, cvv, dateOfExp, this.usr);
         this.cardsContainer = this.doc.getElementById("cardtemplate");
         this.cardsContainer.innerHTML = template;
+    }
 
-        //this.printCards();
+    eraseCards() {
+        this.eleToErase = this.doc.getElementsByClassName('container-cards')
 
         this.btnEraseCard = this.doc.getElementById('btnErase');
         this.btnEraseCard.addEventListener('click', this.eraseCards.bind(this));
 
+        this.eleToErase.innerHTML = ""
     }
 
-    /*
-        // print all cards inside the list
-        printCards() {
-        /*
-            for(let c = 0; this.cards.length; c++) { 
-                return c; 
-            }  
-        } 
-    */
-
-    eraseCards() {
+    deleteAllCards() {
         alert('BORRANDOOOOOO');
     }
 }

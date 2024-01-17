@@ -1,8 +1,6 @@
 /** 
  * @class auth Make all verifications to register and logger users
- * 
  * @version 1.0.1
- * 
 */
 class auth {
    /**
@@ -33,16 +31,19 @@ class auth {
       this.userMail = document.getElementById("email_reg").value;
       this.userPass = document.getElementById("password_reg").value;
 
-      this.userInfoToSetted = this.createUser()
 
       /**
        * Operación ternaria - Sustituir el operacional IF por Ternaria a fin de dejar el código optimizado
-       */
+      */
       this.user == "" || this.user == null &&
          this.userMail == "" || this.userMail == null &&
          this.userPass == "" || this.userPass == null
          ?
          console.log("Rellena los campos de registro") : console.log("Registrado correctamente...")
+
+
+      this.userInfoToSetted = this.createUser()
+
       this.setUserLocally(this.auth, this.userInfoToSetted);
    }
 
@@ -161,7 +162,6 @@ class auth {
       } else {
          console.log('Usuario invalido')
       }
-
    }
 
    /**

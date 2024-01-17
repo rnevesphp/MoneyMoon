@@ -4,10 +4,4 @@ class profile {
 
         this.tmpl = new profileTemplate();
     }
-
-
-
-
-
-
 }

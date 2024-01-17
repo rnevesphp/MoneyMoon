@@ -1,6 +1,5 @@
 /**
  * @author rnevesphp - Romeu Neves
- * 
  * @version 1.0.1
 */
 
@@ -19,6 +18,7 @@ window.addEventListener('changeWebTitle', () => {
         webTitle = document.title
         document.title = '¡Vuelve! 😭😭😭'
     })
+
     window.addEventListener('focus', () => {
         document.title = webTitle;
     })
